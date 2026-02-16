@@ -1,0 +1,11 @@
+# Ignore C++ executables
+*.exe
+*.out
+*.app
+
+# Object files
+*.o
+*.obj
+
+# VS Code folder
+.vscode/
