@@ -11,6 +11,6 @@ int main(){
     // char
     char ch = 'g';
     cout << ch;
-    
+
     return 0;
 }
