@@ -3,32 +3,38 @@
      2000 is a leap year 
      2004 is a leap year.*/
 
+/*
+A year is leap year if:
+
+Rule 1:
+
+Divisible by 4
+AND
+
+Rule 2:
+
+If divisible by 100, then it must also be divisible by 400.*/
+
 #include <iostream>
 using namespace std;
 
 int main(){
     int year;
-    bool isLeapYear = false;
-
     cout<<"Enter a year: ";
     cin>>year;
 
-    if(year % 100 == 0){
-        if(year % 400 == 0){
-            isLeapYear = true;
-        }
+    if(year % 400 == 0){
+        cout<<"Leap year";
     }
-    else{
-        if(year % 4 == 0){
-            isLeapYear = true;
-        }
+    else if( year % 100 == 0){
+        cout<<"not a leap year";
+    }
+    else if (year% 4 == 0){
+        cout<<"Leap year";
+    }
+    else {
+        cout<<"not a leap year.";
     }
 
-    if(isLeapYear){
-        cout<<"Entered number is a leap year.";
-    }
-    else{
-        cout<<"Entered number is not a leap year.";
-    }
     return 0;
 }
