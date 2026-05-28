@@ -11,7 +11,7 @@ int main()
     {
     case 1:
         cout << "Monday";
-        break;
+        break; // breaks of all the conditional statements after this case and will not be executed
     case 2:
         cout << "Tuesday";
         break;
@@ -34,6 +34,8 @@ int main()
     default:
         cout << "invalid day";
     }
+    
+    cout<<"\nbreak doesn't block me from executing this statement";
 
     return 0;
 }

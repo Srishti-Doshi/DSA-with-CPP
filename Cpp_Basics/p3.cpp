@@ -3,10 +3,12 @@ using namespace std;
 
 int main(){
     //int , long, long long -> integers
-    //int = - 10^9 to 10^9
-    //long = - 10^12 to 10^12
-    //long long = - 10^18 to 10^18
-    int a = 15;
+    //int = -10^9 to 10^9
+    //long = -10^12 to 10^12
+    //long long = -10^18 to 10^18
+
+    //int a = 151234567891234; // this will give error because it is out of range of int
+
     long b = 20;
     long long c = 40; 
 
