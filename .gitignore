@@ -7,5 +7,7 @@
 *.o
 *.obj
 
+*.png
+
 # VS Code folder
 .vscode/

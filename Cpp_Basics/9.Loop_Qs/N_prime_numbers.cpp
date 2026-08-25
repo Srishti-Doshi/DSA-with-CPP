@@ -17,10 +17,11 @@ int main()
     int n;
     cin >> n;
 
-    for (int i = 2; i <= n; i++)    // O(sqrt(n))
+    for (int i = 2; i <= n; i++)
     {
         bool isPrime = true;
         for (int j = 2; j*j <= i; j++)
+        // j <= i / j version is mainly a safe programming technique to avoid multiplication overflow.
         {
             if (i%j == 0){
                 isPrime = false;
