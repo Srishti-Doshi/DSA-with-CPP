@@ -21,7 +21,7 @@ int main()
 
     for(int i = 1; i <= n; i++)
     {
-        cout<<"* ";
+        cout<<"* ";  // first star
 
         for(int j = 1; j <= n-1; j++)
         {
@@ -35,7 +35,7 @@ int main()
             }
         }
 
-        cout<<"* "<<endl;
+        cout<<"* "<<endl;  // last star
     }
 
     return 0;
