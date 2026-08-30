@@ -1,5 +1,5 @@
 /*
-Half Diamond Pattern
+Print Half Diamond Pattern
 
 *
 * *
