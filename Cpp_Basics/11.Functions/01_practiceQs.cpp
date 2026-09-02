@@ -10,6 +10,10 @@ int product(int a, int b)
     return a*b;
 }
 
+int divide(int a, int b)
+{
+    return a/b;
+}
 void EvenOdd(int a)
 {
     if(a%2 == 0)
@@ -27,5 +31,6 @@ int main()
     cout<<product(2,3)<<endl;
     EvenOdd(2);
     EvenOdd(3);
+    cout<<divide(6,2);
     return 0;
 }
