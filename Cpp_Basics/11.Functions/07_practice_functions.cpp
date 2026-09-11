@@ -31,6 +31,16 @@ int eqn(int a, int b)
     return a*a + b*b + 2*a*b;
 }
 
+/*
+Write a function that accepts a character (ch) as parameters and returns the character that occurs after ch in the english alphabet.
+
+input = 'c'  => return value 'd'
+*/
+
+char nextCharacter(char ch)
+{
+    return ch + 1;
+}
 
 int main()
 {
@@ -38,6 +48,10 @@ int main()
     cout<<digitsSum(545)<<endl;
 
     cout<<eqn(2, 4)<<endl;   // 2*2 + 4*4 + 2*4*2
+
+    cout<<nextCharacter('a')<<endl;   // 'a' + 1 = 'b'
+    cout<<nextCharacter('H')<<endl;   // 'H' + 1 = 'I'
+
     return 0;
 }
 
