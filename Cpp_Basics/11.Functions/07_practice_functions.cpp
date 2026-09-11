@@ -22,10 +22,22 @@ int digitsSum(int n)
     return sum;
 }
 
+/*
+Write a function which takes 2 numbers as parameters (a & b) and outputs: a^2 + b^2 + 2ab
+*/
+
+int eqn(int a, int b)
+{
+    return a*a + b*b + 2*a*b;
+}
+
+
 int main()
 {
     cout<<digitsSum(2611)<<endl;
     cout<<digitsSum(545)<<endl;
+
+    cout<<eqn(2, 4)<<endl;   // 2*2 + 4*4 + 2*4*2
     return 0;
 }
 
