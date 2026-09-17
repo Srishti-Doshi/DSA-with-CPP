@@ -18,7 +18,7 @@ int main()
 {
     int num[] = {23, 25, 24, 15, 9};
 
-    func(num);  //passing array nmae is equal to passing the pointer
+    func(num);  //passing array name is equal to passing the pointer
 
     func2(num); // same result
 
