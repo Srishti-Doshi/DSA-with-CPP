@@ -3,7 +3,8 @@
 /*
 Increment and Decrement Operators
 
-depents on data type , int (4 bytes increments/decrements, char ( 1byte inc/dec))
+depends on data type , int (4 bytes increments/decrements, char ( 1byte inc/dec))
+
 ptr++
 ptr--
 ++ptr
