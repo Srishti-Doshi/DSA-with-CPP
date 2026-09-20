@@ -1,5 +1,4 @@
-// 
- = only works on sorted array
+// Binary Search = only works on sorted array
 
 /*
 arr[] = {2, 4, 6, 8, 10, 12, 14}
