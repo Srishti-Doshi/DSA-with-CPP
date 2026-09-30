@@ -24,7 +24,11 @@
 #include <climits>
 using namespace std;
 
-// Kadane's Algorithm (Dynamic Programming Approach)
+// Kadane's Algorithm (Greedy Approach)
+//If the current sum becomes negative, it can never help a future subarray, so discard it.
+//TC: O(n)
+//SC: O(1)
+
 int maxSubarraySum(int *arr, int n)
 {
     int maxSum = INT_MIN;
@@ -40,6 +44,24 @@ int maxSubarraySum(int *arr, int n)
             currSum = 0;
         }
 
+    }
+
+    return maxSum;
+}
+
+// Kadane's Algorithm (Dynamic Programming Approach)  
+// TC: O(n)
+//DP = Define a state + find a recurrence + store/reuse previous results.
+//SC: O(1)
+int maxSubarraySum(int *arr, int n)
+{
+    int maxSum = arr[0];
+    int currSum = arr[0];
+
+    for(int i = 1; i < n; i++)
+    {
+        currSum = max(arr[i], currSum + arr[i]);   //start mew or continue old
+        maxSum = max(currSum, maxSum);
     }
 
     return maxSum;
