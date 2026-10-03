@@ -28,6 +28,29 @@ void insertionSort(int *arr, int n)
         cout<<arr[i]<<" ";
     }
 }
+//Insertion Sort: Descending Order
+/*
+1 2 3 4 5
+*/
+void desInsertionSort(int *arr, int n)
+{
+    for(int i = 1; i < n; i++)
+    {
+        int curr = arr[i];
+        int prev = i - 1;
+
+        while(prev >= 0 && arr[prev] < curr)
+        {
+            swap(arr[prev], arr[prev+1]);
+            prev--;
+        }
+    }
+
+    for(int i = 0; i < n; i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
 
 int main()
 {
@@ -40,6 +63,13 @@ int main()
     insertionSort(num2, 5);
     cout<<"\n";
     insertionSort(num3, 5);
+    cout<<"\n";
+
+    desInsertionSort(num1, 5);
+    cout<<"\n";
+    desInsertionSort(num2, 5);
+    cout<<"\n";
+    desInsertionSort(num3, 5);
     cout<<"\n";
     return 0;
 }
