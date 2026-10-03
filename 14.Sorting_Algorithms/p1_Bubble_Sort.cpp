@@ -33,6 +33,32 @@ void bubbleSort(int *arr, int n)
     }
 }
 
+/*
+1 2 3 4 5
+2 3 4 5 1
+3 4 5 2 1
+4 5 3 2 1
+5 4 3 2 1
+*/
+void DesBubbleSort(int *arr, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (arr[j] < arr[j + 1])
+            {
+                swap(arr[j], arr[j + 1]);
+            }
+        }
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+}
+
 int main()
 {
     int arr[] = {1, 2, 3, 4, 5};
@@ -40,14 +66,20 @@ int main()
 
     bubbleSort(arr, n);
     cout<<endl;
+    DesBubbleSort(arr, n);
+    cout<<endl;
 
     int num[] = {4, 1, 3, 2, 5};
     bubbleSort(num, 5);
+    cout<<endl;
+    DesBubbleSort(num, 5);
     cout<<endl;
     
 
     int num1[] = {400, 40, 2, 55, 60};
     bubbleSort(num1, 5);
+    cout<<endl;
+    DesBubbleSort(num1, 5);
     cout<<endl;
     
     return 0;
