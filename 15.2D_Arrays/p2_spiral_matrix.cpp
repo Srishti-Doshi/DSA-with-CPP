@@ -12,9 +12,10 @@ Output: 1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10
 #include<iostream>
 using namespace std;
 
-void spiral_matrix(int mat[][4], int n, int m)
+template<int M>
+void spiral_matrix(int mat[][M], int n, int m)
 {
-    int srow = 0, erow = n-1, scol = 0, ecol = n-1;
+    int srow = 0, erow = n-1, scol = 0, ecol = m-1;
 
     while(srow <= erow && scol <= ecol)
     {
@@ -41,7 +42,7 @@ void spiral_matrix(int mat[][4], int n, int m)
          }
     
         //Left Boundary
-         for(int i = erow-1; i >= scol+1; i--)
+         for(int i = erow-1; i >= srow+1; i--)
          {
             if(scol == ecol)
             {
@@ -67,9 +68,36 @@ int main()
         {13, 14, 15, 16}
     };
 
-    int n = 4, m = 4;
+    spiral_matrix(mat, 4, 4);
 
-    spiral_matrix(mat, n, m);
+    cout<<endl;
 
+    int mat2[3][4] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+    };
+
+    spiral_matrix(mat2, 3, 4);
+    
+    cout<<endl;
+
+    int mat3[3][4] = {
+        {1, 2, 3, 4}
+    };
+
+    spiral_matrix(mat3, 1, 4);
+    
+    cout<<endl;
+
+    int mat4[4][1] = {
+        {1},
+        {2},
+        {3},
+        {4}
+    };
+
+    spiral_matrix(mat4, 4, 1);
+    
     return 0;
 }
