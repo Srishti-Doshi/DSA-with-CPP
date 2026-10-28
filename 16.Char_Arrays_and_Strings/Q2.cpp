@@ -6,8 +6,11 @@ You are given two strings s1 and s2 of equal length. A string swap is an operati
 Return true if possible to make both strings equal by performing at most one string swap on exactly one of the strings. Otherwise, return false.
 
 Example:
-Input: s1 = "bank", s2 = "knab"
+Input: s1 = "bank", s2 = "kanb"
 Output: true
+
+Input: s1 = "bank", s2 = "knab"
+Output: false
 
 Examples:
 1. Strings already equal:
@@ -37,6 +40,9 @@ The question wants to check whether two strings can become equal by swapping two
 
 #include <iostream>
 using namespace std;
+
+#include<algorithm>  // for swap()
+#include <string>  //for string
 
 //brute force approach => TC : O(n*n)
 bool isBuddy(string str1, string str2, int n, int m)
@@ -70,22 +76,65 @@ bool isBuddy(string str1, string str2, int n, int m)
     return false;
 }
 
+// TC: O(n) Approach
+bool areAlmostEqual(string s1, string s2)
+{
+    if(s1.length() != s2.length())
+    {
+        return false;
+    }
+
+    char diffChar1, diffChar2;
+    int diff = 0;
+
+    for(int i = 0; i < s1.length(); i++)
+    {
+        if(s1[i] != s2[i])
+        {
+            if(diff == 0) //first mismatch
+            {
+                diffChar1 = s1[i];
+                diffChar2 = s2[i];
+            }
+            else if( diff == 1) //second mismatch => check one swap fixes or not
+            {
+                if(s1[i] != diffChar2 || s2[i] != diffChar1)
+                {
+                    return false;
+                }
+            }
+            diff++;
+        }
+    }
+    if(diff == 1 || diff > 2)
+    {
+        return false;
+    }
+
+    return true;
+}
+
+
+
 int main()
 {
     string str1 = "abc";
     string str2 = "acb";
-
     cout<<isBuddy(str1, str2, str1.length(), str2.length())<<"\n";
+    cout<<areAlmostEqual(str1, str2)<<"\n";
+    //1 => Swapping b and c works
 
     string str3 = "abc";
     string str4 = "acd";
-
     cout<<isBuddy(str3, str4, str3.length(), str4.length())<<"\n";
+    cout<<areAlmostEqual(str3, str4)<<"\n";
+    //0=> doesn't work (Only one position differs)
 
     string str5 = "ab";
     string str6 = "ba";
-
     cout<<isBuddy(str5, str6, str5.length(), str6.length())<<"\n";
+    cout<<areAlmostEqual(str5, str6)<<"\n";
+    //1	=> Swapping a and b works
 
     return 0;
 }
